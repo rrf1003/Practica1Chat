@@ -59,7 +59,7 @@ Development Targets
 
 	<!-- ==================== Compile Target ==================================== -->
 	<target name="compile" depends="prepare" description="Compile the full source files.">
-		<javac encoding="UTF-8" srcdir="${src.dir}" destdir="${build.dir}" source="1.7" target="1.7" includeantruntime="false">
+		<javac encoding="UTF-8" srcdir="${src.dir}" destdir="${build.dir}" source="17" target="17" includeantruntime="false">
 			<classpath refid="compile.classpath" />
 		</javac>
 	</target>
@@ -83,7 +83,7 @@ Documentation Targets
 
 	<!-- ==================== Javadoc Target ================================== -->
 	<target name="javadoc" depends="prepare,compile" description="JavaDoc API">
-		<javadoc encoding="UTF-8" charset="UTF-8" docencoding="UTF-8" destdir="${doc.dir}" packagenames="es.*" source="1.7" access="private">
+		<javadoc encoding="UTF-8" charset="UTF-8" docencoding="UTF-8" destdir="${doc.dir}" packagenames="es.*" source="17" access="private">
 			<link offline="true" href="http://docs.oracle.com/javase/7/docs/api/" packagelistLoc="${resources.dir}" />
 			<classpath>
 				<pathelement location="${build.dir}" />
@@ -102,7 +102,7 @@ Documentation Targets
 		<javadoc encoding="UTF-8" destdir="${doccheck.dir}" packagenames="es.*" 
 			doclet="com.sun.tools.doclets.doccheck.DocCheck" 
 			docletpath="${lib.dir}/doccheck.jar" 
-			source="1.7" defaultexcludes="yes" access="private">
+			source="17" defaultexcludes="yes" access="private">
 			<classpath refid="compile.classpath" />
 					<fileset dir="${src.dir}" casesensitive="yes">
 							<include name="**/*.java" />
