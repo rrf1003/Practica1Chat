@@ -259,7 +259,7 @@ public class ChatClientImpl implements ChatClient {
 		 * Run.
 		 */
 		public void run() {
-			while (true) {
+			while (carryOn) {
 				try {
 					ChatMessage msg = (ChatMessage) sInput.readObject();
 	                String content = msg.getMessage();
@@ -270,10 +270,11 @@ public class ChatClientImpl implements ChatClient {
 	                    sender = content.split(":")[0].trim();
 	                }
 
-	                // Only display if the sender is not in the banned list
-	                if (!bannedUsers.contains(sender)) {
+	                if (bannedUsers.contains(sender)) {
+	                	
+	                } else {
 	                    System.out.println(content);
-	                    System.out.print("\n> ");
+	                    System.out.print("> ");
 	                }
 
 				} catch (IOException e) {
