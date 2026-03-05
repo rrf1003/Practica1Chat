@@ -135,7 +135,7 @@ public class ChatServerImpl implements ChatServer {
 	public synchronized void broadcast(ChatMessage message) {
 		// Mandatory authorship requirement (Page 5 of the assignment)
 	    String name = "Rodrigo"; 
-	    String prefix = name + " sponsors the message: ";
+	    String prefix = name + " sponsors the message - ";
 	    
 	    // Only prefix standard text messages
 	    if (message.getType() == MessageType.MESSAGE) {
