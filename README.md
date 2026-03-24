@@ -42,7 +42,8 @@ En pom.xml:
     </properties>
 
 En build.xml:
-Actualiza las tareas javac y javadoc para usar source="17" y target="17".
+
+    Actualiza las tareas javac y javadoc para usar source="17" y target="17".
 
 ### 2. Compilar mediante línea de comandos
 
